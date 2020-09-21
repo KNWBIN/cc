@@ -1,1 +1,2 @@
-FROM k8s.gcr.io/ingress-nginx/controller:v0.35.0
+FROM busybox
+RUN cd && wget https://dl.k8s.io/v1.18.8/kubernetes-server-linux-amd64.tar.gz
