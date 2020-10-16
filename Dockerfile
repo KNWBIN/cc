@@ -1,3 +1,3 @@
 FROM golang
-RUN git clone https://github.com/Sheridan/smartctl_exporter.git
-RUN cd smartctl_exporter && make
+RUN git clone https://github.com/mingcheng/prometheus-smart-exporter.git
+RUN cd prometheus-smart-exporter && make
