@@ -1,3 +1,3 @@
-FROM busybox
-RUN wget https://get.helm.sh/helm-v3.3.4-linux-amd64.tar.gz
-
+FROM golang
+RUN git clone https://github.com/rancher/rancher.git
+RUN cd rancher && go get ./... && go build
