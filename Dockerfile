@@ -1,3 +1,3 @@
 FROM golang
-RUN git clone https://github.com/rancher/rancher.git
-RUN cd rancher && go get ./... && go build
+RUN git https://gitee.com/wbdevops/kubernetes.git
+RUN cd kubernetes && make all WHAT=cmd/kubeadm GOFLAGS=-v
