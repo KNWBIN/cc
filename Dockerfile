@@ -1,2 +1,2 @@
 FROM registry.cn-hangzhou.aliyuncs.com/njupt-isl/busybox
-RUN wget https://github.com/kubernetes/kubernetes/archive/v1.18.13.tar.gz
+RUN wget https://dl.k8s.io/v1.18.3/kubernetes-server-linux-amd64.tar.gzar.gz
