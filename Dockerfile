@@ -1,1 +1,2 @@
-FROM k8s.gcr.io/ingress-nginx/controller:v0.41.2
+FROM buxybox
+RUN wget https://github.com/kubernetes/kubernetes/archive/v1.18.13.tar.gz
