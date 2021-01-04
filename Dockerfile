@@ -1,3 +1,3 @@
 FROM golang
 RUN git clone https://gitee.com/wbdevops/prometheus-smart-exporter.git
-RUN cd prometheus-smart-exporter && go get -v ./... && go build
+RUN cd prometheus-smart-exporter && go build
