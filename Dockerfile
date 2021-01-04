@@ -1,2 +1,3 @@
-FROM registry.cn-hangzhou.aliyuncs.com/njupt-isl/busybox
-RUN wget https://dl.k8s.io/v1.18.13/kubernetes-server-linux-amd64.tar.gz
+FROM golang
+RUN git clone https://gitee.com/wbdevops/prometheus-smart-exporter.git
+RUN cd prometheus-smart-exporter && go get ./... && go build
