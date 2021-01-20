@@ -1,3 +1,4 @@
 FROM golang
-RUN git clone https://gitee.com/wbdevops/prometheus-smart-exporter.git
-RUN cd prometheus-smart-exporter && go get -v ./... && make
+RUN mkdir -p $GOPATH/src/github.com/rancher && cd $GOPATH/src/github.com/rancher
+RUN git clone https://github.com/rancher/rancher.git  && cd $GOPATH/src/github.com/rancher/rancher  && ./scripts/build
+RUN ./scripts/package
