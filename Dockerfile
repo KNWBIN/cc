@@ -1,4 +1,5 @@
-FROM registry.cn-hangzhou.aliyuncs.com/aiserver/code:golang
-RUN apt update && apt install build-essential -y && apt install rsync jq -y
-RUN  git config --global http.postBuffer 20000000 && git clone https://gitee.com/wbdevops/kubernetes-1.18.15.git
-RUN cd kubernetes-1.18.15 && make all WHAT=cmd/kubeadm GOFLAGS=-v
+FROM golang
+RUN wget https://get.helm.sh/helm-v3.5.0-linux-amd64.tar.gz && tar xvf helm-v3.5.0-linux-amd64.tar.gz && mv linux-amd64/helm /usr/bin/
+RUN https://github.com/rancher/rancher.git && cd rancher && git checkout 2.4.14
+RUN ./scripts/build
+RUN ./scripts/package
