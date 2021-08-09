@@ -1,18 +1,42 @@
-name: Docker Image CI
+name: Go
 
 on:
   push:
     branches: [ master ]
   pull_request:
     branches: [ master ]
+  workflow_dispatch:
+    inputs:
+      packageName:
+        description: 'select build version'     
+        required: true
+        default: 'v2.5.9'
+      tags:
+        description: 'Test scenario tags'  
 
 jobs:
 
   build:
-
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v2
-    - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
+
+    - name: Set up Go
+      uses: actions/setup-go@v2
+      with:
+        go-version: 1.16
+        
+#    - name: Dump GitHub context
+#      env:
+#        packageName: v2.5.9
+      #run: echo "::set-env name=packageName::v1.18.2"
+      #run: echo '${{ env.packageName }}'
+#      run: echo "packageName=${{ env.packageName }}" >> $GITHUB_ENV
+
+
+
+
+
+
+    - name: Get Env
+      run: echo '${{ env.packageName }}'
