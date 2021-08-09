@@ -1,7 +1,9 @@
 name: debugger-action
-on: 
-  watch:
-    types: started
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
 jobs:
   build:
     runs-on: ubuntu-latest
