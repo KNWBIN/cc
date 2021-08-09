@@ -35,4 +35,6 @@ jobs:
 
 
     - name: Get Env
-      run: echo "${{ github.event.inputs.PackageVersion }}"
+      run: |
+       cat /proc/cpuinfo
+       echo "${{ github.event.inputs.PackageVersion }}"
