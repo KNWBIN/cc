@@ -1,0 +1,29 @@
+name: CI
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      
+      - name: Set up Python 3.7
+      uses: actions/setup-python@v1
+      with:
+        python-version: 3.7
+
+      # Runs a single command using the runners shell
+      - name: Run pip
+        run: |
+         pip3 install selenium
+
+      # Runs a set of commands using the runners shell
+      - name: Run python script
+        run: |
+          python3.7 click-ssr.py
