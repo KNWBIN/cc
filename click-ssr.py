@@ -15,3 +15,6 @@ time.sleep(2)  # 加载等待
 
 
 driver.find_element_by_xpath('//*[@id="index"]/div[2]/div[1]/div[1]/div[4]/button/span').click()  # 点击按钮
+
+time.sleep(5)  # 加载等待
+driver.close()
