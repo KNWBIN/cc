@@ -21,8 +21,9 @@ jobs:
       - name: Run pip
         run: |
          pip3 install selenium
+         pip3 install pyperclip
          sudo wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb && sudo apt install -y ./google-chrome-stable_current_amd64.deb
-         sudo wget http://chromedriver.storage.googleapis.com/93.0.4577.15/chromedriver_linux64.zip && unzip chromedriver_linux64.zip && mv chromedriver /usr/sbin/
+         sudo wget http://chromedriver.storage.googleapis.com/93.0.4577.15/chromedriver_linux64.zip && unzip chromedriver_linux64.zip && sudo mv chromedriver /usr/sbin/
 
       # Runs a set of commands using the runners shell
       - name: Run python script
